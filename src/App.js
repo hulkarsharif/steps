@@ -49,16 +49,18 @@ function Steps() {
                             textColor="#fff"
                             onClick={handlePrevious}
                             text="Prevous"
-                        />
-                        <button
-                            style={{
-                                backgroundColor: `#7950f2`,
-                                color: "#fff"
-                            }}
-                            onClick={handleNext}
+                            emoji=""
                         >
-                            Next
-                        </button>
+                            <span>👈</span>Previous
+                        </Button>
+                        <Button
+                            bgColor="#7950f2"
+                            textColor="#fff"
+                            onClick={handleNext}
+                            text=""
+                        >
+                            <span>👉</span>Next
+                        </Button>
                     </div>
                 </div>
             )}
@@ -66,13 +68,13 @@ function Steps() {
     );
 }
 
-function Button({ textColor, bgColor, onClick, text }) {
+function Button({ textColor, bgColor, onClick, children }) {
     return (
         <button
-            style={{ backgroundColor: bgColor, color: text }}
+            style={{ backgroundColor: bgColor, color: textColor }}
             onClick={onClick}
         >
-            text
+            {children}
         </button>
     );
 }
